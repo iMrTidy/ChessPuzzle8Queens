@@ -29,20 +29,14 @@ namespace ChessPuzzle
 
         private void SetQueens()
         {
-            var count = 0;
             foreach (var solution in Solver.Solutions)
             {
-                count++;
                 var chessBoard = new UCChessBoardVM();
                 foreach (var item in solution)
                 {
                     chessBoard.ChessBoard.ElementAt(item.Row - 1).ChessRow.ElementAt(item.Column - 1).Content = Constants.QUEEN_SYMBOL;
                 }
                 ChessBoards.Add(chessBoard);
-                if (count > 100)
-                {
-                    break;
-                }
             }
         }
     }
