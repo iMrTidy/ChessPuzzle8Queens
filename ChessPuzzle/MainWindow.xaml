@@ -1,0 +1,31 @@
+﻿<Window x:Class="ChessPuzzle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChessPuzzle"
+        xmlns:uc="clr-namespace:ChessPuzzle.UCs"
+        mc:Ignorable="d"
+        Title="Chess Puzzle Solver" Height="715" Width="924" ContentRendered="Window_ContentRendered">
+    <Window.Resources>
+        <local:MainWindowVM x:Key="mainWindowVM"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource mainWindowVM}">
+        <ScrollViewer>
+            <ItemsControl ItemsSource="{Binding ChessBoards}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="Black" BorderThickness="1" Margin="5">
+                            <uc:UCChessBoard Margin="5"/>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</Window>
