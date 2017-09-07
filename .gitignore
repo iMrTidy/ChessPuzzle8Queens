@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ChessPuzzle/obj/Debug
+/ChessPuzzle/bin/Debug
+/.vs/ChessPuzzle/v15
+/.vs/ChessPuzzle/v15
